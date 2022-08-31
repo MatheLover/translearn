@@ -7,4 +7,5 @@ pacman::p_load(
   rmarkdown
 )
 load_all()
-keras_models <- reticulate::import("keras.models")
+Save_Img(cwd="/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",300,60,60)
+
