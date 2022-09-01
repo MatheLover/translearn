@@ -2,8 +2,10 @@
 
 # import keras.models and keras_vggface
 keras_models <- reticulate::import("keras.models")
-# local python package
-keras_vggface <- reticulate::import_from_path("keras_vggface", path = "/Users/benchiang/pythonProject/VGG_Face_Trial/keras-vggface", convert = TRUE, delay_load = FALSE)
+
+# python lib path within the R package
+py_path <- file.path(getwd(),"VGG_Face_Trial/keras-vggface")
+keras_vggface <- reticulate::import_from_path("keras_vggface", path = py_path, convert = TRUE, delay_load = FALSE)
 
 #' Load VGGFace model and print out model summary(e.g. output shapes and Param #)
 #'

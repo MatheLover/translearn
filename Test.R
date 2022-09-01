@@ -7,5 +7,6 @@ pacman::p_load(
   rmarkdown
 )
 load_all()
-Save_Img(cwd="/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",300,60,60)
+# Save_Img(cwd="/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",300,60,60)
 
+model <- Load_Place365()
