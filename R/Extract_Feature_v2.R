@@ -10,6 +10,8 @@
 #'
 #' @examples Extract_Feature(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", c(224,224))
 Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
+  require(tidyverse)
+
   # import
   joblib <- reticulate::import("joblib")
 
@@ -22,7 +24,7 @@ Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
 
   # iterate each img from imgfile_catalog
   # nrow(imgfile_catalog)
-  for(i in 1:10){
+  for(i in 1:100){
     # retrieve original filepath for each img
     img_path <- imgfile_catalog[i,"img_filepath"]
 

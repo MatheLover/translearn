@@ -1,13 +1,12 @@
 #'
 #'
 #' @param cwd Filepath of project directory
-#' @param fpath_txt Filepath of .txt containing image information
 #'
 #' @return Save combined features. None is returned
 #' @export
 #'
 #' @examples
-Combine_Feature <- function(cwd,fpath_txt){
+Combine_Feature_v2 <- function(cwd){
   joblib <- reticulate::import("joblib")
   numpy <- reticulate::import("numpy")
 
@@ -16,23 +15,43 @@ Combine_Feature <- function(cwd,fpath_txt){
 
   # iterate each model
   for (model in cvmodels){
+    # model path
+    model_path <- file.path(cwd, "feature_extraction",model)
+
+    # check whether model folder exists. If no, skip
+    if(!dir.exists(model_path)){
+      next
+    }
+
     # initialize feature list for each model
     feature_array <- list()
 
-    # read .txt file cataloguing all img files
-    imgfile_catalog <- read_delim(fpath_txt, delim='\t', col_names=TRUE)
+    # construct file path for .txt file
+    fpath_txt <- file.path(cwd, "img_txt/img.txt")
 
+    # read .txt file
+    imgfile_catalog <- read_delim(fpath_txt, delim='\t', col_names=FALSE)
+
+    # change col name to "img_filepath"
+    colnames(imgfile_catalog) <- c("img_filepath")
 
     imgfile_catalog <- imgfile_catalog[1:100,]
 
     for (i in 1:nrow(imgfile_catalog)){
-      # construct feature file path
-      feature_path <- paste(cwd,"/feature_extraction/",model,"/",imgfile_catalog[i, "user"],
-                            "/",imgfile_catalog[i, "imgname"],".dat",sep="")
+      # convert to char
+      fpath_char <- as.character(imgfile_catalog[1,"img_filepath"])
 
+      # construct feature filename and folder and path
+      feature_fname <- paste(basename(fpath_char),".dat",sep="")
+      feature_folder <- basename(dirname(fpath_char))
+      feature_path <- file.path(cwd, "feature_extraction",model, feature_folder,feature_fname)
+      if(!file.exists(feature_path)){
+        next
+      }
 
       # read feature
       img_features = joblib$load(feature_path)
+
 
       # convert multidimensional feature array into 1D array
       img_feature <- numpy$array(img_features)
@@ -67,7 +86,11 @@ Combine_Feature <- function(cwd,fpath_txt){
     # write.table(py_feature_array, cfname, row.names = FALSE, sep='\t')
 
   }
-
-
-
 }
+
+
+
+
+
+
+

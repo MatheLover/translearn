@@ -18,6 +18,11 @@ Generate_txt <- function(cwd){
   # txt filepath
   txt_fp <- file.path(txt_dir,"img.txt")
 
+  # randomly permutate rows
+  set.seed(721)
+  rand <- sample(nrow(img_df))
+  img_df <- img_df[rand,]
+
   # write to img.txt file
   write.table(img_df, txt_fp, sep = "\t",row.names = FALSE, col.names = FALSE)
 }

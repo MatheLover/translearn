@@ -1,8 +1,4 @@
-# import
-pd <- reticulate::import("pandas")
-sklearn_preprocessing <- reticulate::import("sklearn.preprocessing")
-sklearn_decomp <- reticulate::import("sklearn.decomposition")
-joblib <- reticulate::import("joblib")
+
 
 #' Peform PCA
 #'
@@ -13,12 +9,22 @@ joblib <- reticulate::import("joblib")
 #'
 #' @examples PCA("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 PCA <- function(cwd){
+  pd <- reticulate::import("pandas")
+  sklearn_preprocessing <- reticulate::import("sklearn.preprocessing")
+  sklearn_decomp <- reticulate::import("sklearn.decomposition")
+  joblib <- reticulate::import("joblib")
+
   # currently used models
   cvmodels <- list("VGG16_fc1","VGG16_places_fc1","VGGFace_fc6")
 
   for (model in cvmodels){
     # retrieve the filepath for .dat file for each model
     dat_fp <- paste(cwd,"/feature_extraction/","combined_feature/",model,".dat",sep="")
+
+    # check whether .dat file exists; If no, skip
+    if(!file.exists(dat_fp)){
+      next
+    }
 
     # load feature array and create df
     features_array <- joblib$load(dat_fp)
