@@ -35,11 +35,11 @@ Combine_Feature_v2 <- function(cwd){
     # change col name to "img_filepath"
     colnames(imgfile_catalog) <- c("img_filepath")
 
-    imgfile_catalog <- imgfile_catalog[1:100,]
+    imgfile_catalog <- imgfile_catalog[1:10,]
 
     for (i in 1:nrow(imgfile_catalog)){
       # convert to char
-      fpath_char <- as.character(imgfile_catalog[1,"img_filepath"])
+      fpath_char <- as.character(imgfile_catalog[i,"img_filepath"])
 
       # construct feature filename and folder and path
       feature_fname <- paste(basename(fpath_char),".dat",sep="")

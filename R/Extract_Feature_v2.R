@@ -24,7 +24,7 @@ Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
 
   # iterate each img from imgfile_catalog
   # nrow(imgfile_catalog)
-  for(i in 1:100){
+  for(i in 1:10){
     # retrieve original filepath for each img
     img_path <- imgfile_catalog[i,"img_filepath"]
 
