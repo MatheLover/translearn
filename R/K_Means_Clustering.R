@@ -32,7 +32,7 @@ K_Means_Clustering <- function(cwd, num_cluster, fpath_txt){
     }
 
     # perform k-means clustering
-    k_result <- kmeans(feature_df, centers=num_cluster, nstart=25)
+    k_result <- kmeans(feature_df, centers=num_cluster, nstart=25,iter.max = 1000)
 
     # extract label from k_result
     label_result <- as.data.frame(k_result["cluster"])

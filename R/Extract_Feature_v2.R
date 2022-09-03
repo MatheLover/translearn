@@ -11,7 +11,6 @@
 #' @examples Extract_Feature(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", c(224,224))
 Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
   require(tidyverse)
-
   # import
   joblib <- reticulate::import("joblib")
 
@@ -19,12 +18,18 @@ Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
   fpath_txt <- file.path(cwd,"img_txt/img.txt")
 
   # read .txt file cataloguing all img files
-  imgfile_catalog <- read_delim(fpath_txt, delim='\t', col_names=FALSE)
+  imgfile_catalog <- readr::read_delim(fpath_txt, delim='\t', col_names=FALSE)
   colnames(imgfile_catalog) <- c("img_filepath")
 
   # iterate each img from imgfile_catalog
   # nrow(imgfile_catalog)
-  for(i in 1:10){
+  # print number of all images
+  print(paste("The number of all images is ",nrow(imgfile_catalog),sep=""))
+
+  for(i in 1:nrow(imgfile_catalog)){
+    # keep track of image being extracted
+    print(paste("Extracting image No. ",i,sep=""))
+
     # retrieve original filepath for each img
     img_path <- imgfile_catalog[i,"img_filepath"]
 

@@ -35,7 +35,7 @@ Combine_Feature_v2 <- function(cwd){
     # change col name to "img_filepath"
     colnames(imgfile_catalog) <- c("img_filepath")
 
-    imgfile_catalog <- imgfile_catalog[1:10,]
+    # imgfile_catalog <- imgfile_catalog[1:10,]
 
     for (i in 1:nrow(imgfile_catalog)){
       # convert to char

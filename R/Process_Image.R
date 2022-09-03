@@ -19,9 +19,9 @@
 #' @return Images will be saved. None will be returned
 #' @export
 #'
-#' @examples process_img("224x224!", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpg")
-#' @examples process_img("0","/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpeg" )
-Image_Processing <- function(img_dimension, img_filepath, img_type){
+#' @examples process_img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpg")
+#' @examples process_img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpeg" )
+Image_Processing <- function(img_filepath, img_type){
   # construct filepath for the image directory
   imgdir_fp <- file.path(img_filepath, "img")
 
@@ -43,19 +43,12 @@ Image_Processing <- function(img_dimension, img_filepath, img_type){
 
     }
 
-    # resize img according to dimension only if img_dimension is not "0"
-    if(img_dimension != "0"){
-      resized <- image_scale(img, img_dimension)
-    }
-    else{
-      resized <- img
-    }
 
     # output img filepath
     fpath_out <- paste(substring(img_list[i], 1, nchar(img_list[1]) - 4), ".",img_type, sep="")
 
     # save image
-    image_write(resized, path = fpath_out, format=img_type)
+    image_write(img_d, path = fpath_out, format=img_type)
 
   }
 

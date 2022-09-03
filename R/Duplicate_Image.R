@@ -72,11 +72,12 @@ Duplicate_Image_Kmeans <- function(cwd){
 #' @examples
 Duplicate_Image <- function(label_20, model, dir, cwd){
   # construct read_img path
-  label_20["read_img_path"] <- file.path(cwd,"img",label_20$user,label_20$imgname)
+  label_20["read_img_path"] <- label_20$X1
+  # file.path(cwd,"img",label_20$user,label_20$imgname)
 
   # construct save_img folder and path
   label_20["save_img_folder"] <- file.path(cwd, "cluster",dir,model,label_20$label)
-  label_20["save_img_path"] <- file.path(cwd, "cluster",dir,model,label_20$label,label_20$imgname)
+  label_20["save_img_path"] <- file.path(cwd, "cluster",dir,model,label_20$label,basename(label_20$X1))
 
   # read ans save image
   for (l in 1:nrow(label_20)){

@@ -21,7 +21,8 @@ Extract_Feature_v2(model_face,"VGGFace_fc6","/Users/benchiang/Documents/Computat
 
 Combine_Feature_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 PCA("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
-# K_Means_Clustering_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",6)
+K_Means_Clustering_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",6)
+Duplicate_Image_Kmeans("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 
 
 # load VGG16
