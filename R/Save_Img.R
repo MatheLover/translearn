@@ -1,8 +1,4 @@
 
-pil <- reticulate::import("PIL")
-
-
-
 #' Save images with same label. Called within
 #'
 #' @param cwd Project directory
@@ -18,6 +14,8 @@ pil <- reticulate::import("PIL")
 #'
 #' @examples
 Save_Image <- function(cwd, jpg_list_df, k_val, model, w_sq,w_clusterid,h_imgid){
+  pil <- reticulate::import("pillow")
+
   # loads a font object from the given file, and creates a font object with font size 60
   fntcluster <- pil$ImageFont$truetype('/Library/Fonts/Arial.ttf', as.integer(60))
 

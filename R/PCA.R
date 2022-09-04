@@ -55,7 +55,6 @@ PCA <- function(cwd){
     }
     cts <- pd$DataFrame(components)
     write.table(cts, paste(comp_savepath,"/components.txt",sep=""), sep="\t",row.names = FALSE,col.names = FALSE)
-    # to_csv(comp_savepath, header=None, index=None, sep='\t', mode='a')
 
     # save variance explained ratio
     variance <- pca$explained_variance_ratio_
@@ -64,7 +63,6 @@ PCA <- function(cwd){
       dir.create(var_savepath, recursive = TRUE)
     }
     variance <- pd$DataFrame(variance)
-    #variance$to_csv(var_savepath, header=None, index=None, sep='\t', mode='a')
     write.table(variance, paste(var_savepath,"/variance.txt",sep=""), sep="\t", row.names = FALSE, col.names = FALSE)
   }
 

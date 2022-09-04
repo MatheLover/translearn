@@ -1,4 +1,4 @@
-#'
+#' Combine Image features
 #'
 #' @param cwd Filepath of project directory
 #' @param fpath_txt Filepath of .txt containing image information

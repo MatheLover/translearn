@@ -7,8 +7,9 @@ pacman::p_load(
   rmarkdown
 )
 load_all()
-# # Save_Img(cwd="/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",300,60,60)
-#
+
+Install_Py_Packages()
+
 Generate_txt("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 model_16 <- Load_VGG16()
 Extract_Feature_v2(model_16,"VGG16_fc1","/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",c(224,224))
@@ -20,9 +21,14 @@ model_face <- Load_VGGFace()
 Extract_Feature_v2(model_face,"VGGFace_fc6","/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",c(224,224))
 
 Combine_Feature_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
+
 PCA("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
+
 K_Means_Clustering_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",6)
+
 Duplicate_Image_Kmeans("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
+
+Save_Img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",300,60,60)
 
 
 # load VGG16

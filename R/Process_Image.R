@@ -4,10 +4,6 @@
 # 2. https://cran.r-project.org/web/packages/magick/vignettes/intro.html
 
 
-# Install package Magick Package and load it
-# install.packages("magick")
-
-
 #' Load, resize images to desirable dimensions, and save them as a specific file type(e.g. jpg)
 #'
 #' @param img_dimension(character) The dimension(widthxheight) of a resized image. The default is 0 -- unchanged.
