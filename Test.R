@@ -1,13 +1,13 @@
-pacman::p_load(
-  devtools,
-  usethis,
-  roxygen2,
-  testthat,
-  knitr,
-  rmarkdown
-)
-load_all()
-devtools::document()
+# pacman::p_load(
+#   devtools,
+#   usethis,
+#   roxygen2,
+#   testthat,
+#   knitr,
+#   rmarkdown
+# )
+# load_all()
+# devtools::document()
 
 
 Install_Py_Packages()
