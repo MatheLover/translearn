@@ -2,7 +2,6 @@
 
 
 
-
 #' Load VGG16_Place_365 model and print out model summary(e.g. output shapes and Param #)
 #'
 #' @return a VGG16_Place_365 model
