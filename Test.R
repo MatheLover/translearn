@@ -7,11 +7,15 @@ pacman::p_load(
   rmarkdown
 )
 load_all()
-# devtools::document()
+devtools::document()
 
+# load package
+library(translearn)
 
+# check whether python pacakges installed
 Install_Py_Packages()
 
+# generate img txt file
 Generate_txt("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 model_16 <- Load_VGG16()
 Extract_Feature_v2(model_16,"VGG16_fc1","/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",c(224,224))
