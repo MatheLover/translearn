@@ -10,4 +10,4 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Imports: keras, reticulate, tidyverse, cluster,factoextra, magick
-
+RoxygenNote: 7.2.1

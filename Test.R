@@ -7,6 +7,8 @@ pacman::p_load(
   rmarkdown
 )
 load_all()
+devtools::document()
+
 
 Install_Py_Packages()
 
