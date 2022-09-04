@@ -7,3 +7,6 @@
 [submodule "Place365_translearn"]
 	path = Place365_translearn
 	url = https://github.com/GKalliatakis/Keras-VGG16-places365.git
+[submodule "place_translearn_2"]
+	path = place_translearn_2
+	url = https://github.com/MatheLover/Keras-VGG16-places365.git
