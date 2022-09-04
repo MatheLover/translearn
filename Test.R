@@ -1,12 +1,12 @@
-# pacman::p_load(
-#   devtools,
-#   usethis,
-#   roxygen2,
-#   testthat,
-#   knitr,
-#   rmarkdown
-# )
-# load_all()
+pacman::p_load(
+  devtools,
+  usethis,
+  roxygen2,
+  testthat,
+  knitr,
+  rmarkdown
+)
+load_all()
 # devtools::document()
 
 

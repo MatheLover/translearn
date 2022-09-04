@@ -13,7 +13,7 @@ Load_Place365 <- function(){
   # import keras.models and vgg16_place_365
   keras_models <- reticulate::import("keras.models")
   # local python lib within R package
-  py_path_place <- file.path(getwd(),"Places365_translearn")
+  py_path_place <- file.path(getwd(),"Place365_translearn")
   vgg16_place365 <- reticulate::import_from_path("vgg16_places_365", path = py_path_place, convert = TRUE, delay_load = FALSE)
 
   # load pre-trained weights from the base model
