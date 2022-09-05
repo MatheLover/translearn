@@ -8,8 +8,8 @@
 #'
 #' @examples
 Combine_Feature <- function(cwd,fpath_txt){
-  joblib <- reticulate::import("joblib")
-  numpy <- reticulate::import("numpy")
+  joblib <- reticulate::import("joblib",delay_load = TRUE)
+  numpy <- reticulate::import("numpy",delay_load = TRUE)
 
   # create model list
   cvmodels <- list("VGG16_fc1","VGG16_places_fc1","VGGFace_fc6")

@@ -11,8 +11,7 @@ Load_VGGFace <- function(){
   keras_models <- reticulate::import("keras.models")
 
   # python lib path within the R package
-  py_path <- file.path(getwd(),"VGG_Face_translearn_2")
-  keras_vggface <- reticulate::import_from_path("keras_vggface", path = py_path, convert = TRUE, delay_load = FALSE)
+  keras_vggface <- reticulate::import_from_path("keras_vggface", path = py_path, convert = TRUE, delay_load = TRUE)
 
   # load pre-trained weights from the base model
   vggface <- keras_vggface$vggface$VGGFace(model='vgg16')

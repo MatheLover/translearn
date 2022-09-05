@@ -1,5 +1,11 @@
 # This function checks whether the Python packages are installed. If not, installation will be carried out.
 
+#' Title
+#'
+#' @return
+#' @export
+#'
+#' @examples
 Install_Py_Packages <- function(){
   # package vector
   pac_c <- c("joblib","numpy","pandas","sklearn","pillow","keras","keras_applications","keras-vggface")

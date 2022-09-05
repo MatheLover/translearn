@@ -1,4 +1,4 @@
-joblib <- reticulate::import("joblib")
+joblib <- reticulate::import("joblib", delay_load = TRUE)
 
 
 #' Extract image features

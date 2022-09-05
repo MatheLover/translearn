@@ -9,10 +9,10 @@
 #'
 #' @examples PCA("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 PCA <- function(cwd){
-  pd <- reticulate::import("pandas")
-  sklearn_preprocessing <- reticulate::import("sklearn.preprocessing")
-  sklearn_decomp <- reticulate::import("sklearn.decomposition")
-  joblib <- reticulate::import("joblib")
+  pd <- reticulate::import("pandas",delay_load = TRUE)
+  sklearn_preprocessing <- reticulate::import("sklearn.preprocessing",delay_load = TRUE)
+  sklearn_decomp <- reticulate::import("sklearn.decomposition",delay_load = TRUE)
+  joblib <- reticulate::import("joblib",delay_load = TRUE)
 
   # currently used models
   cvmodels <- list("VGG16_fc1","VGG16_places_fc1","VGGFace_fc6")

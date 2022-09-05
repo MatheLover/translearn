@@ -12,7 +12,7 @@
 Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
   require(tidyverse)
   # import
-  joblib <- reticulate::import("joblib")
+  joblib <- reticulate::import("joblib",delay_load = TRUE)
 
   # construct img.txt filepath
   fpath_txt <- file.path(cwd,"img_txt/img.txt")
