@@ -10,7 +10,6 @@ load_all()
 devtools::document()
 
 # load package
-library(translearn)
 
 # check whether python pacakges installed
 Install_Py_Packages()
