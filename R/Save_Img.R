@@ -19,7 +19,7 @@ Save_Image <- function(cwd, jpg_list_df, k_val, model, w_sq,w_clusterid,h_imgid)
   if(Sys.info()['sysname'] == "Darwin" | Sys.info()['sysname'] == "Linux"){
     fntcluster <- pil$ImageFont$truetype('/Library/Fonts/Arial.ttf', as.integer(60))
   }
-  else if(Sys.info()['sysname'] == "Window"){
+  else if(Sys.info()['sysname'] == "Windows"){
     fntcluster <- pil$ImageFont$truetype('C:\\WINDOWS\\Fonts\\Arial.ttf', as.integer(60))
   }
 
