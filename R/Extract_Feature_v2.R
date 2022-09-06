@@ -1,16 +1,14 @@
-#' Extract image features
+#' Extract image features and save them as .dat files
 #'
 #' @param model character Loaded learning model
 #' @param base_model_name Name of base model
 #' @param cwd Filepath of project directory
 #' @param img_dimension Column vector specifying width and height of resized images, e.g. c(224,224)
 #'
-#' @return extracted features are saved in .dat files. None is returned
 #' @export
 #'
 #' @examples Extract_Feature(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", c(224,224))
 Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
-  require(tidyverse)
   # import
   joblib <- reticulate::import("joblib",delay_load = TRUE)
 
@@ -71,15 +69,7 @@ Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
 
 }
 
-# construct img.txt filepath
-# fpath_txt <- file.path(cwd,"img_txt/img.txt")
-#
-# # read .txt file cataloguing all img files
-# imgfile_catalog <- read_delim(fpath_txt, delim='\t', col_names=FALSE)
-# colnames(imgfile_catalog) <- c("img_filepath")
-# fpath_char <- as.character(imgfile_catalog[1,"img_filepath"])
-# basename(dirname(fpath_char))
-# basename(fpath_char)
+
 
 
 

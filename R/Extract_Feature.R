@@ -11,7 +11,7 @@ joblib <- reticulate::import("joblib", delay_load = TRUE)
 #' @param header Whether .txt file has header
 #'
 #' @return extracted features are saved in .dat files. None is returned
-#' @export
+#'
 #'
 #' @examples Extract_Feature(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material","/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material/img filename study2A.txt",delim='\t', header=TRUE)
 Extract_Feature <- function(model, base_model_name, cwd, fpath_txt,delim, header){

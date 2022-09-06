@@ -4,10 +4,9 @@
 #' @param cwd File path of project directory
 #' @param num_cluster Number of clusters
 #'
-#' @return Save assigned label for each image as csv.
 #' @export
 #'
-#' @examples
+#' @examples K_Means_Clustering_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",6)
 K_Means_Clustering_v2 <- function(cwd, num_cluster){
   # create model list
   cvmodels <- list("VGG16_fc1","VGG16_places_fc1","VGGFace_fc6")
@@ -41,7 +40,7 @@ K_Means_Clustering_v2 <- function(cwd, num_cluster){
 
     # read all image file txt
     fpath_txt <- file.path(cwd, "img_txt/img.txt")
-    img_catalogue <- read_delim(fpath_txt, delim= "\t", col_names = FALSE)
+    img_catalogue <- readr::read_delim(fpath_txt, delim= "\t", col_names = FALSE)
 
     # add a new column label to img_catalogue
     for(i in 1:nrow(label_result)){

@@ -1,10 +1,7 @@
-
-
 #' Peform PCA
 #'
 #' @param cwd Filepath of the project directory
 #'
-#' @return Save pca as .dat files. None is returned
 #' @export
 #'
 #' @examples PCA("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")

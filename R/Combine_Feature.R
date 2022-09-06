@@ -4,9 +4,8 @@
 #' @param fpath_txt Filepath of .txt containing image information
 #'
 #' @return Save combined features. None is returned
-#' @export
 #'
-#' @examples
+
 Combine_Feature <- function(cwd,fpath_txt){
   joblib <- reticulate::import("joblib",delay_load = TRUE)
   numpy <- reticulate::import("numpy",delay_load = TRUE)

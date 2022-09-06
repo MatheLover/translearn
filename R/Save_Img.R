@@ -1,7 +1,7 @@
 
-#' Save images with same label. Called within
+#' Save images with same label. Called within Save_Img
 #'
-#' @param cwd Project directory
+#' @param cwd Filepath of project directory
 #' @param jpg_list_df Information(filepath and label) for images
 #' @param k_val K in k-means
 #' @param model Model name
@@ -9,10 +9,8 @@
 #' @param w_clusterid Width of text for cluster id (60)
 #' @param h_imgid Height of gap (60)
 #'
-#' @return Images are saved. None is returned.
 #'
 #'
-#' @examples
 Save_Image <- function(cwd, jpg_list_df, k_val, model, w_sq,w_clusterid,h_imgid){
   pil <- reticulate::import("pillow",delay_load = TRUE)
 
@@ -104,16 +102,16 @@ Save_Image <- function(cwd, jpg_list_df, k_val, model, w_sq,w_clusterid,h_imgid)
 
 
 #' Save clustered images in grid directory as png files
+#' Within this function, we call Save_Image.
 #'
-#' @param cwd
+#' @param cwd Filepath of project directory
 #' @param w_sq Width/height of image (300)
 #' @param w_clusterid Width of text for cluster id (60)
 #' @param h_imgid Height of gap (60)
 #'
-#' @return
 #' @export
 #'
-#' @examples
+#' @examples Save_Img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",300,60,60)
 Save_Img <- function(cwd,w_sq,w_clusterid,h_imgid){
   cvmodels <- list("VGG16_fc1","VGG16_places_fc1","VGGFace_fc6")
 

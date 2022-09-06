@@ -1,4 +1,10 @@
-# This function generates .txt file containing image file paths from their folder(s).
+#' Generates .txt file containing image file paths from their folder(s).
+#'
+#' @param cwd Filepath of the project directory containing img file
+#'
+#' @export
+#'
+#' @examples Generate_txt("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 Generate_txt <- function(cwd){
   # img directory path
   img_dir_path <- file.path(cwd, "img")
@@ -19,6 +25,7 @@ Generate_txt <- function(cwd){
   txt_fp <- file.path(txt_dir,"img.txt")
 
   # randomly permutate rows
+  # make sure the result is replicated
   set.seed(721)
   rand <- sample(nrow(img_df))
   img_df <- img_df[rand,]

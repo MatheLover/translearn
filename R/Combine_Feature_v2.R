@@ -1,11 +1,11 @@
-#'
+#' Combine image features according to each model
 #'
 #' @param cwd Filepath of project directory
 #'
 #' @return Save combined features. None is returned
 #' @export
 #'
-#' @examples
+#' @examples Combine_Feature_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 Combine_Feature_v2 <- function(cwd){
   joblib <- reticulate::import("joblib",delay_load = TRUE)
   numpy <- reticulate::import("numpy",delay_load = TRUE)

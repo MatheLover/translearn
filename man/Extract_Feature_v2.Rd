@@ -2,7 +2,7 @@
 % Please edit documentation in R/Extract_Feature_v2.R
 \name{Extract_Feature_v2}
 \alias{Extract_Feature_v2}
-\title{Extract image features}
+\title{Extract image features and save them as .dat files}
 \usage{
 Extract_Feature_v2(model, base_model_name, cwd, img_dimension)
 }
@@ -15,11 +15,8 @@ Extract_Feature_v2(model, base_model_name, cwd, img_dimension)
 
 \item{img_dimension}{Column vector specifying width and height of resized images, e.g. c(224,224)}
 }
-\value{
-extracted features are saved in .dat files. None is returned
-}
 \description{
-Extract image features
+Extract image features and save them as .dat files
 }
 \examples{
 Extract_Feature(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", c(224,224))

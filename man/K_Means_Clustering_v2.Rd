@@ -11,9 +11,9 @@ K_Means_Clustering_v2(cwd, num_cluster)
 
 \item{num_cluster}{Number of clusters}
 }
-\value{
-Save assigned label for each image as csv.
-}
 \description{
 Performs K-Means clustering and save assigned label for each image as csv.
+}
+\examples{
+K_Means_Clustering_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",6)
 }

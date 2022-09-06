@@ -2,12 +2,12 @@
 % Please edit documentation in R/Save_Img.R
 \name{Save_Image}
 \alias{Save_Image}
-\title{Save images with same label. Called within}
+\title{Save images with same label. Called within Save_Img}
 \usage{
 Save_Image(cwd, jpg_list_df, k_val, model, w_sq, w_clusterid, h_imgid)
 }
 \arguments{
-\item{cwd}{Project directory}
+\item{cwd}{Filepath of project directory}
 
 \item{jpg_list_df}{Information(filepath and label) for images}
 
@@ -21,9 +21,6 @@ Save_Image(cwd, jpg_list_df, k_val, model, w_sq, w_clusterid, h_imgid)
 
 \item{h_imgid}{Height of gap (60)}
 }
-\value{
-Images are saved. None is returned.
-}
 \description{
-Save images with same label. Called within
+Save images with same label. Called within Save_Img
 }

@@ -9,9 +9,6 @@ PCA(cwd)
 \arguments{
 \item{cwd}{Filepath of the project directory}
 }
-\value{
-Save pca as .dat files. None is returned
-}
 \description{
 Peform PCA
 }

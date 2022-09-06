@@ -6,9 +6,8 @@
 #' @param fpath_txt File path of .txt containing image information
 #'
 #' @return Save assigned label for each image as csv.
-#' @export
 #'
-#' @examples
+
 K_Means_Clustering <- function(cwd, num_cluster, fpath_txt){
   # create model list
   cvmodels <- list("VGG16_fc1","VGG16_places_fc1","VGGFace_fc6")

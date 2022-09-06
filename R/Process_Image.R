@@ -4,19 +4,15 @@
 # 2. https://cran.r-project.org/web/packages/magick/vignettes/intro.html
 
 
-#' Load, resize images to desirable dimensions, and save them as a specific file type(e.g. jpg)
+#' Save images in a specific file type(e.g. jpg)
 #'
-#' @param img_dimension(character) The dimension(widthxheight) of a resized image. The default is 0 -- unchanged.
-#' Note: The image size may be changed permanently if the image is already in the desirable file type.
-#        If you want to change img size only temporarily, please modify image size in Extract_Feature method rather than here.
-#' @param img_filepath(character) The file path of the project directory
+#' @param img_filepath(character) File path of the project directory
 #' @param img_type(character) The desirable image file type(e.g. jpg, jpeg, png, and gif)
 #'
-#' @return Images will be saved. None will be returned
 #' @export
 #'
-#' @examples process_img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpg")
-#' @examples process_img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpeg" )
+#' @examples Process_Image("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpg")
+#' @examples Process_Image("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpeg" )
 Process_Image <- function(img_filepath, img_type){
   # construct filepath for the image directory
   imgdir_fp <- file.path(img_filepath, "img")

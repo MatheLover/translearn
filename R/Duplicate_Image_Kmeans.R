@@ -1,11 +1,11 @@
-#' Duplicate images for all images clustered by K-means methods
+#' Duplicate images for all images clustered by K-means methods.
+#' Within this function, we call Call Duplicate_Image() to save images with specific label.
 #'
 #' @param cwd File path of project directory
 #'
-#' @return Call Duplicate_Image() to save images with specific label.
 #' @export
 #'
-#' @examples
+#' @examples Duplicate_Image_Kmeans("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 Duplicate_Image_Kmeans <- function(cwd){
   # model list
   cvmodels <- list("VGG16_fc1","VGG16_places_fc1","VGGFace_fc6")
@@ -66,10 +66,8 @@ Duplicate_Image_Kmeans <- function(cwd){
 #' @param dir Directory name(e.g. 6_Means)
 #' @param cwd Filepath of project directory
 #'
-#' @return Duplicate images with specific label. None is returned.
 #' @export
 #'
-#' @examples
 Duplicate_Image <- function(label_20, model, dir, cwd){
   # construct read_img path
   label_20["read_img_path"] <- label_20$X1

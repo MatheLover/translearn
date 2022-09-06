@@ -2,10 +2,13 @@
 % Please edit documentation in R/Install_Py_Package.R
 \name{Install_Py_Packages}
 \alias{Install_Py_Packages}
-\title{Title}
+\title{Check whether the Python packages are installed. If not, installation will be carried out.}
 \usage{
 Install_Py_Packages()
 }
 \description{
-Title
+Check whether the Python packages are installed. If not, installation will be carried out.
+}
+\examples{
+Install_Py_Packages()
 }

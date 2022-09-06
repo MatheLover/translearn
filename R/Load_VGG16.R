@@ -12,10 +12,10 @@
 #' @examples Load_VGG16()
 Load_VGG16 <- function(){
   # load pre-trained weights based on ImageNet
-  base_model <- application_vgg16(weights = 'imagenet', include_top = TRUE)
+  base_model <- keras::application_vgg16(weights = 'imagenet', include_top = TRUE)
 
   # load the pre-trained model to a deep learning model
-  model <- keras_model(inputs = base_model$input,
+  model <- keras::keras_model(inputs = base_model$input,
                        outputs = get_layer(base_model, 'fc1')$output)
 
   # check model
