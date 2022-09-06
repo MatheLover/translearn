@@ -5,7 +5,7 @@
 #' @examples Install_Py_Packages()
 Install_Py_Packages <- function(){
   # package vector
-  pac_c <- c("joblib","numpy","pandas","sklearn","pillow","keras","keras_applications","keras-vggface")
+  pac_c <- c("joblib","numpy","pandas","sklearn","pillow","keras","keras_applications","keras-vggface","tensorflow")
 
   # currently installed Py packages
   py_df <- reticulate::py_list_packages()
