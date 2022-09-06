@@ -21,10 +21,15 @@ Duplicate_Image_Kmeans <- function(cwd){
     # iterate dir
     for(i in 1:length(dir_vec)){
       # construct file path for label.txt -- namely cwd/img_cluster/K_Means/model/label.txt
-      folder_path <- file.path(cluster_path,dir_vec[i],model,"label.txt")
+      ftxt_path <- file.path(cluster_path,dir_vec[i],model,"label.txt")
+
+      # label.txt not exists, skip
+      if(!file.exists(ftxt_path)){
+        next
+      }
 
       # read label.txt
-      label_df <- read_csv(folder_path)
+      label_df <- readr::read_csv(ftxt_path)
 
       # extract k value
       k_val <- substring(dir_vec[i],1,1)
@@ -83,7 +88,7 @@ Duplicate_Image <- function(label_20, model, dir, cwd){
     read_fpath <- as.character(label_20[l, "read_img_path"])
 
     # read img
-    img <- image_read(read_fpath)
+    img <- magick::image_read(read_fpath)
 
     # convert list to char
     save_folder <- as.character(label_20[l, "save_img_folder"])
@@ -93,7 +98,7 @@ Duplicate_Image <- function(label_20, model, dir, cwd){
     save_fpath <- as.character(label_20[l, "save_img_path"])
 
     # save img
-    image_write(img,save_fpath, format = "jpg")
+    magick::image_write(img,save_fpath, format = "jpg")
   }
 }
 

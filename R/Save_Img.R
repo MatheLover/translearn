@@ -12,7 +12,7 @@
 #'
 #'
 Save_Image <- function(cwd, jpg_list_df, k_val, model, w_sq,w_clusterid,h_imgid){
-  pil <- reticulate::import("pillow",delay_load = TRUE)
+  pil <- reticulate::import("PIL",delay_load = TRUE)
 
   # loads a font object from the given file, and creates a font object with font size 60
   fntcluster <- pil$ImageFont$truetype('/Library/Fonts/Arial.ttf', as.integer(60))
@@ -131,6 +131,11 @@ Save_Img <- function(cwd,w_sq,w_clusterid,h_imgid){
     for(model in cvmodels){
       # construct path .../cluster/6_Means/model
       fpath <- file.path(dir,model)
+
+      # skip if path not existed
+      if(!dir.exists(fpath)){
+        next
+      }
 
       # list of all img filepaths and convert to df
       jpg_list <- list.files(fpath,pattern="\\.jpg$",full.names = TRUE, recursive = TRUE)

@@ -30,7 +30,7 @@ Combine_Feature_v2 <- function(cwd){
     fpath_txt <- file.path(cwd, "img_txt/img.txt")
 
     # read .txt file
-    imgfile_catalog <- read_delim(fpath_txt, delim='\t', col_names=FALSE)
+    imgfile_catalog <- readr::read_delim(fpath_txt, delim='\t', col_names=FALSE)
 
     # change col name to "img_filepath"
     colnames(imgfile_catalog) <- c("img_filepath")
@@ -63,7 +63,7 @@ Combine_Feature_v2 <- function(cwd){
 
 
     # convert r list to python list
-    py_feature_array <- r_to_py(feature_array)
+    py_feature_array <- reticulate::r_to_py(feature_array)
 
 
     # initialize feature array as numpy array in python
