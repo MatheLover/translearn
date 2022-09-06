@@ -12,7 +12,8 @@ load_all()
 # usethis::use_package("magick")
 # usethis::use_package("reticulate")
 # usethis::use_package("readr")
-usethis::use_package("magrittr")
+# usethis::use_package("magrittr")
+usethis::use_import_from("magrittr","%>%")
 devtools::document()
 
 # load package
