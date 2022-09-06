@@ -27,7 +27,7 @@ Image_Processing <- function(img_filepath, img_type){
   # iterate through the img_list to resize and save to specific file types
   for (i in 1:length(img_list)){
     # read each img
-    img <- image_read(img_list[i])
+    img <- magick::image_read(img_list[i])
 
     # file type of original img
     ftype <- substring(img_list[i], nchar(img_list[i])-2, nchar(img_list[i]))
@@ -35,7 +35,7 @@ Image_Processing <- function(img_filepath, img_type){
     # if the filetype of orginal image is not .jpg (e.g. jpeg)
     if(ftype != img_type){
       # change file type to desirable img type
-      img_d <- image_convert(img,img_type)
+      img_d <- magick::image_convert(img,img_type)
 
     }
 
@@ -44,7 +44,7 @@ Image_Processing <- function(img_filepath, img_type){
     fpath_out <- paste(substring(img_list[i], 1, nchar(img_list[1]) - 4), ".",img_type, sep="")
 
     # save image
-    image_write(img_d, path = fpath_out, format=img_type)
+    magick::image_write(img_d, path = fpath_out, format=img_type)
 
   }
 
