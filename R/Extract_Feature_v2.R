@@ -7,7 +7,7 @@
 #'
 #' @export
 #'
-#' @examples Extract_Feature(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", c(224,224))
+#' @examples Extract_Feature_v2(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", c(224,224))
 Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
   # import
   joblib <- reticulate::import("joblib",delay_load = TRUE)
