@@ -1,12 +1,12 @@
-pacman::p_load(
-  devtools,
-  usethis,
-  roxygen2,
-  testthat,
-  knitr,
-  rmarkdown
-)
-load_all()
+# pacman::p_load(
+#   devtools,
+#   usethis,
+#   roxygen2,
+#   testthat,
+#   knitr,
+#   rmarkdown
+# )
+# load_all()
 # usethis::use_package("cluster")
 # usethis::use_package("keras")
 # usethis::use_package("magick")
@@ -14,9 +14,13 @@ load_all()
 # usethis::use_package("readr")
 # usethis::use_package("magrittr")
 # usethis::use_import_from("magrittr","%>%")
-devtools::document()
+# devtools::document()
 
-# load package
+# load remotes package and install translearn
+library(remotes)
+remotes::install_github("MatheLover/translearn")
+
+library(translearn)
 
 # check whether python pacakges installed
 Install_Py_Packages()
@@ -61,12 +65,4 @@ Save_Img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Materi
 #
 # # pca
 # PCA("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
-
-
-Extract_Feature_v2(model_16,"VGG16_fc1","/Users/benchiang/Desktop/project",c(224,224))
-Combine_Feature_v2("/Users/benchiang/Desktop/project")
-PCA("/Users/benchiang/Desktop/project")
-K_Means_Clustering_v2("/Users/benchiang/Desktop/project",6)
-Duplicate_Image_Kmeans("/Users/benchiang/Desktop/project")
-Save_Img("/Users/benchiang/Desktop/project",300,60,60)
 
