@@ -35,16 +35,16 @@ Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
     fpath_char <- as.character(img_path)
 
     # load image
-    img <- image_load(fpath_char, target_size = img_dimension)
+    img <- keras::image_load(fpath_char, target_size = img_dimension)
 
     # convert img to array
-    img_array <- image_to_array(img)
+    img_array <- keras::image_to_array(img)
 
     # create a batch of images, you need an additional dimension: (samples, size1,size2,channels)
-    img_expand <- array_reshape(img_array, c(1,dim(img_array)))
+    img_expand <- keras::array_reshape(img_array, c(1,dim(img_array)))
 
     # adjust image to the format the model requires
-    x_train = imagenet_preprocess_input(img_expand)
+    x_train = keras::imagenet_preprocess_input(img_expand)
 
     # extract features
     feature <- model %>% predict(x_train)
