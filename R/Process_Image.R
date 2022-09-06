@@ -17,7 +17,7 @@
 #'
 #' @examples process_img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpg")
 #' @examples process_img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpeg" )
-Image_Processing <- function(img_filepath, img_type){
+Process_Image <- function(img_filepath, img_type){
   # construct filepath for the image directory
   imgdir_fp <- file.path(img_filepath, "img")
 
