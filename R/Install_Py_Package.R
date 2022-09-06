@@ -1,17 +1,14 @@
-# This function checks whether the Python packages are installed. If not, installation will be carried out.
-
-#' Title
+#' Check whether the Python packages are installed. If not, installation will be carried out.
 #'
-#' @return
 #' @export
 #'
-#' @examples
+#' @examples Install_Py_Packages()
 Install_Py_Packages <- function(){
   # package vector
   pac_c <- c("joblib","numpy","pandas","sklearn","pillow","keras","keras_applications","keras-vggface")
 
   # currently installed Py packages
-  py_df <- py_list_packages()
+  py_df <- reticulate::py_list_packages()
 
   # iterate pac vector
   for (pac in pac_c){
