@@ -7,6 +7,11 @@ pacman::p_load(
   rmarkdown
 )
 load_all()
+usethis::use_package("cluster")
+usethis::use_package("keras")
+usethis::use_package("magick")
+usethis::use_package("reticulate")
+usethis::use_package("readr")
 devtools::document()
 
 # load package

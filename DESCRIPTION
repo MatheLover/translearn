@@ -9,5 +9,10 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Imports: keras, reticulate, tidyverse, cluster, factoextra, magick
+Imports: 
+    cluster,
+    keras,
+    magick,
+    readr,
+    reticulate
 RoxygenNote: 7.2.1
