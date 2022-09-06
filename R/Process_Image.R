@@ -34,6 +34,9 @@ Process_Image <- function(img_filepath, img_type){
       img_d <- magick::image_convert(img,img_type)
 
     }
+    else{
+      img_d <- img
+    }
 
 
     # output img filepath

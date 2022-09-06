@@ -60,5 +60,5 @@ Save_Img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Materi
 # # pca
 # PCA("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
 
-
+Process_Image("/Users/benchiang/Desktop/img-test","jpg")
 
