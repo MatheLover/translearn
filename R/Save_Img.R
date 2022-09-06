@@ -15,7 +15,14 @@ Save_Image <- function(cwd, jpg_list_df, k_val, model, w_sq,w_clusterid,h_imgid)
   pil <- reticulate::import("PIL",delay_load = TRUE)
 
   # loads a font object from the given file, and creates a font object with font size 60
-  fntcluster <- pil$ImageFont$truetype('/Library/Fonts/Arial.ttf', as.integer(60))
+  # if mac
+  if(Sys.info()['sysname'] == "Darwin" | Sys.info()['sysname'] == "Linux"){
+    fntcluster <- pil$ImageFont$truetype('/Library/Fonts/Arial.ttf', as.integer(60))
+  }
+  else if(Sys.info()['sysname'] == "Window"){
+    fntcluster <- pil$ImageFont$load_default()
+  }
+
 
   # number of images to show in each row
   ncol <- 20
