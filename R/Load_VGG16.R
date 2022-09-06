@@ -16,7 +16,8 @@ Load_VGG16 <- function(){
 
   # load the pre-trained model to a deep learning model
   model <- keras::keras_model(inputs = base_model$input,
-                       outputs = get_layer(base_model, 'fc1')$output)
+                       outputs = keras::get_layer(base_model, 'fc1')$output)
+
 
   # check model
   summary(model)

@@ -16,7 +16,7 @@ Load_Place365 <- function(){
   vgg16_place365 <- reticulate::import_from_path("vgg16_places_365", path = py_path_place, convert = TRUE, delay_load = TRUE)
 
   # load pre-trained weights from the base model
-  shape <- tuple(as.integer(224),as.integer(224),as.integer(3),convert=TRUE)
+  shape <- reticulate::tuple(as.integer(224),as.integer(224),as.integer(3),convert=TRUE)
   base_model <- vgg16_place365$VGG16_Places365(weights='places', include_top=TRUE,input_shape = shape)
 
   # load pre-trained base model to a new deep learning model
