@@ -1,12 +1,12 @@
-# pacman::p_load(
-#   devtools,
-#   usethis,
-#   roxygen2,
-#   testthat,
-#   knitr,
-#   rmarkdown
-# )
-# load_all()
+pacman::p_load(
+  devtools,
+  usethis,
+  roxygen2,
+  testthat,
+  knitr,
+  rmarkdown
+)
+load_all()
 # usethis::use_package("cluster")
 # usethis::use_package("keras")
 # usethis::use_package("magick")
@@ -14,7 +14,8 @@
 # usethis::use_package("readr")
 # usethis::use_package("magrittr")
 # usethis::use_import_from("magrittr","%>%")
-# devtools::document()
+devtools::document()
+
 
 # load remotes package and install translearn
 library(remotes)
@@ -23,7 +24,7 @@ remotes::install_github("MatheLover/translearn")
 library(translearn)
 
 # check whether python pacakges installed
-Install_Py_Packages()
+Install_Py_Packages_v2()
 
 # generate img txt file
 Generate_txt("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
