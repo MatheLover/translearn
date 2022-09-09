@@ -27,25 +27,27 @@ library(translearn)
 Install_Py_Packages_v2()
 
 # generate img txt file
-Generate_txt("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
+Generate_txt("/Users/benchiang/Documents/ComputationalSocialScience/Test")
 model_16 <- Load_VGG16()
-Extract_Feature_v2(model_16,"VGG16_fc1","/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",c(224,224))
+Extract_Feature_v2(model_16,"VGG16_fc1","/Users/benchiang/Documents/ComputationalSocialScience/Test",c(224,224))
 
 model_365 <- Load_Place365()
-Extract_Feature_v2(model_365,"VGG16_places_fc1","/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",c(224,224))
+Extract_Feature_v2(model_365,"VGG16_places_fc1","/Users/benchiang/Documents/ComputationalSocialScience/Test",c(224,224))
 
 model_face <- Load_VGGFace()
-Extract_Feature_v2(model_face,"VGGFace_fc6","/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",c(224,224))
+Extract_Feature_v2(model_face,"VGGFace_fc6","/Users/benchiang/Documents/ComputationalSocialScience/Test",c(224,224))
 
-Combine_Feature_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
+Combine_Feature_v2("/Users/benchiang/Documents/ComputationalSocialScience/Test")
 
-PCA("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
+PCA("/Users/benchiang/Documents/ComputationalSocialScience/Test")
 
-K_Means_Clustering_v2("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",6)
+K_Means_Clustering_v2("/Users/benchiang/Documents/ComputationalSocialScience/Test",6)
 
-Duplicate_Image_Kmeans("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material")
+Duplicate_Image_Kmeans("/Users/benchiang/Documents/ComputationalSocialScience/Test")
 
-Save_Img("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material",300,60,60)
+Save_Img("/Users/benchiang/Documents/ComputationalSocialScience/Test",300,60,60)
+
+Subset_txt("/Users/benchiang/Documents/ComputationalSocialScience/Test",100)
 
 
 # load VGG16
