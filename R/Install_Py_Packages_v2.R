@@ -64,7 +64,7 @@ Install_Default <- function(pac_c){
 #' @examples Install_Virtualenv(c("joblib","numpy","pandas","sklearn","pillow","keras","keras_applications","keras-vggface","tensorflow"),envname="my_env", python=NULL)
 Install_Virtualenv <- function(pac_c, envname="my_env", python=NULL){
   # create a new virtualenv
-  reticulate::virtualenv_create(envname = envname, python=python)
+  # reticulate::virtualenv_create(envname = envname, python=python)
 
   # install packages
   reticulate::virtualenv_install(envname = envname,packages = pac_c)
@@ -83,7 +83,7 @@ Install_Virtualenv <- function(pac_c, envname="my_env", python=NULL){
 #' @examples Install_Conda("my_conda_env",c("joblib","numpy","pandas","sklearn","pillow","keras","keras_applications","keras-vggface","tensorflow"))
 Install_Conda <- function(envname_conda,pac_c){
   # create a new conda environment
-  reticulate::conda_create(envname = envname_conda )
+  # reticulate::conda_create(envname = envname_conda )
 
   # install packages
   reticulate::conda_install(envname = envname_conda,packages = pac_c, pip=TRUE)
