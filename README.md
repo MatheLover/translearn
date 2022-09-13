@@ -24,6 +24,7 @@ Note: 5 and 6 are already included in Test.R.
 
 ## References
 [Related GitHub Repository](https://github.com/yilangpeng/image-clustering)
+
 [Related Paper](https://hanzhang.xyz/files/Image%20Clustering%20An%20Unsupervised%20Approach%20to%20Categorize%20Visual%20Data%20in%20Social%20Science%20Research.pdf)
 
 ## Citation
