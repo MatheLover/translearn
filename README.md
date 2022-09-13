@@ -7,7 +7,6 @@ A R package using transfer learning to cluster images. This is, up to our knowle
 ## Table of Contents
 - [Installation](#installation)
 - [Credits](#credits)
-- [License](#license)
 
 ## Installation
 1. Open a new RStudio project 
