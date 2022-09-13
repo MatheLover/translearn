@@ -9,7 +9,7 @@ A R package using transfer learning to cluster images. This is, up to our knowle
 - [Credits](#credits)
 - [License](#license)
 
-## Installation:
+## Installation
 1. Open a new RStudio project 
 2. Use `remotes::install_github(translearn)` for installation 
 3. Use git commands to add two submodules required in the project (Make sure the current directory is the project)
@@ -24,7 +24,12 @@ Note: 5 and 6 are already included in Test.R.
 
 ## References
 [Related GitHub Repository](https://github.com/yilangpeng/image-clustering)
-@article{zhang_image_2022,
+[Related Paper](https://hanzhang.xyz/files/Image%20Clustering%20An%20Unsupervised%20Approach%20to%20Categorize%20Visual%20Data%20in%20Social%20Science%20Research.pdf)
+
+## Citation
+If you find this repository helpful, please consider citing:
+
+  @article{zhang_image_2022,
  abstract = {Automated image analysis has received increasing attention in social scientific research, yet existing scholarship has focused on the application of supervised machine learning to classify images into predefined categories. This study focuses on the task of unsupervised image clustering, which automatically finds categories from image data. First, we review the steps to perform image clustering, and then we focus on the key challenge of performing unsupervised image clustering---finding low-dimensional representations of images. We present several methods of extracting low-dimensional representations of images, including the traditional bag-of-visual-words model, self-supervised learning, and transfer learning. We compare these methods using two datasets containing images related to protests in China (from Sina Weibo, Chinese Twitter) and to climate change(from Instagram). Results show that transfer learning significantly outperforms other methods. The dataset used in the pretrained model critically determines what categories algorithms can discover.},
  author = {Zhang, Han and Peng, Yilang},
  doi = {10.1177/00491241221082603},
@@ -33,6 +38,8 @@ Note: 5 and 6 are already included in Test.R.
  url = {https://osf.io/preprints/socarxiv/mw57x/},
  year = {2022}
 }
+
+
 
 
 
