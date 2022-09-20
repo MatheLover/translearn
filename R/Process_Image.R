@@ -6,16 +6,16 @@
 
 #' Save images in a specific file type(e.g. jpg)
 #'
-#' @param img_filepath(character) File path of the project directory
+#' @param cwd(character) File path of the project directory
 #' @param img_type(character) The desirable image file type(e.g. jpg, jpeg, png, and gif)
 #'
 #' @export
 #'
 #' @examples Process_Image("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpg")
 #' @examples Process_Image("/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", "jpeg" )
-Process_Image <- function(img_filepath, img_type){
+Process_Image <- function(cwd, img_type){
   # construct filepath for the image directory
-  imgdir_fp <- file.path(img_filepath, "img")
+  imgdir_fp <- file.path(cwd, "img")
 
   # list all image files(jpg|jpeg|png|gif) in the directory
   img_list <- list.files(imgdir_fp, pattern = 'jpg|jpeg|png|gif', recursive = TRUE, full.names = TRUE)

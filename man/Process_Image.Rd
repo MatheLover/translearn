@@ -4,10 +4,10 @@
 \alias{Process_Image}
 \title{Save images in a specific file type(e.g. jpg)}
 \usage{
-Process_Image(img_filepath, img_type)
+Process_Image(cwd, img_type)
 }
 \arguments{
-\item{img_filepath(character)}{File path of the project directory}
+\item{cwd(character)}{File path of the project directory}
 
 \item{img_type(character)}{The desirable image file type(e.g. jpg, jpeg, png, and gif)}
 }
