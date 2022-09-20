@@ -28,11 +28,10 @@ Install_Py_Packages_v2()
 
 # generate img txt file
 Generate_txt("/Users/benchiang/Documents/ComputationalSocialScience/Test")
-Subset_txt("/Users/benchiang/Documents/ComputationalSocialScience/Test",100)
-Process_Image()
+Subset_txt("/Users/benchiang/Documents/ComputationalSocialScience/Test",10)
 
 model_16 <- Load_VGG16()
-Extract_Feature_v2(model_16,"VGG16_fc1","/Users/benchiang/Documents/ComputationalSocialScience/Test",c(224,224))
+Extract_Feature_v2(model_16,"VGG16_fc1","/Users/benchiang/Documents/ComputationalSocialScience/Test",c(224,224),TRUE)
 
 model_365 <- Load_Place365()
 Extract_Feature_v2(model_365,"VGG16_places_fc1","/Users/benchiang/Documents/ComputationalSocialScience/Test",c(224,224))

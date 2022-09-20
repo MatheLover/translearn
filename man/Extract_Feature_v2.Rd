@@ -4,7 +4,7 @@
 \alias{Extract_Feature_v2}
 \title{Extract image features and save them as .dat files}
 \usage{
-Extract_Feature_v2(model, base_model_name, cwd, img_dimension)
+Extract_Feature_v2(model, base_model_name, cwd, img_dimension, sampled)
 }
 \arguments{
 \item{model}{character Loaded learning model}
@@ -14,6 +14,8 @@ Extract_Feature_v2(model, base_model_name, cwd, img_dimension)
 \item{cwd}{Filepath of project directory}
 
 \item{img_dimension}{Column vector specifying width and height of resized images, e.g. c(224,224)}
+
+\item{sampled}{If sampled is TRUE, use sampled images; else, use all images. Default is TRUE}
 }
 \description{
 Extract image features and save them as .dat files

@@ -4,17 +4,23 @@
 #' @param base_model_name Name of base model
 #' @param cwd Filepath of project directory
 #' @param img_dimension Column vector specifying width and height of resized images, e.g. c(224,224)
+#' @param sampled If sampled is TRUE, use sampled images; else, use all images. Default is TRUE
 #'
 #' @export
 #' @importFrom magrittr %>%
 #'
 #' @examples Extract_Feature_v2(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", c(224,224))
-Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension){
+Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension, sampled){
   # import
   joblib <- reticulate::import("joblib",delay_load = TRUE)
 
   # construct img.txt filepath
-  fpath_txt <- file.path(cwd,"img_txt/img.txt")
+  if(sampled != TRUE){
+    fpath_txt <- file.path(cwd,"img_txt/img.txt")
+  }
+  else{
+    fpath_txt <- file.path(cwd,"img_txt_sample/img_txt_sample.txt")
+  }
 
   # read .txt file cataloguing all img files
   imgfile_catalog <- readr::read_delim(fpath_txt, delim='\t', col_names=FALSE)
