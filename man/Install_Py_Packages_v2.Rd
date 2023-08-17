@@ -7,7 +7,7 @@
 Install_Py_Packages_v2(
   method = "virtualenv",
   envname = "my_env",
-  python = NULL,
+  python = "mypython_path",
   envname_conda = "my_conda_env"
 )
 }

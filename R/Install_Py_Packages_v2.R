@@ -11,7 +11,7 @@
 #' @examples Install_Py_Packages_v2("default")
 #' @examples Install_Py_Packages_v2("virtualenv",envname="my_env")
 #' @examples Install_Py_Packages_v2("conda",envname="~/Documents/conda_test")
-Install_Py_Packages_v2 <- function(method="virtualenv",envname="my_env", python=NULL, envname_conda="my_conda_env"){
+Install_Py_Packages_v2 <- function(method="virtualenv",envname="my_env", python="mypython_path", envname_conda="my_conda_env"){
   # package vector
   pac_c <- c("joblib","numpy","pandas","scikit-learn","pillow","keras==2.2.4","keras_applications","keras-vggface","tensorflow==1.14.0")
 
@@ -19,7 +19,7 @@ Install_Py_Packages_v2 <- function(method="virtualenv",envname="my_env", python=
     Install_Default(pac_c)
   }
   else if(method == "virtualenv"){
-    Install_Virtualenv(pac_c, envname=envname, python=NULL)
+    Install_Virtualenv(pac_c, envname=envname, python="mypython_path")
   }
   else if(method == "conda"){
     Install_Conda(envname_conda=envname_conda,pac_c=pac_c)
@@ -62,9 +62,9 @@ Install_Default <- function(pac_c){
 #'
 #'
 #' @examples Install_Virtualenv(c("joblib","numpy","pandas","sklearn","pillow","keras","keras_applications","keras-vggface","tensorflow"),envname="my_env", python=NULL)
-Install_Virtualenv <- function(pac_c, envname="my_env", python=NULL){
+Install_Virtualenv <- function(pac_c, envname="my_env", python="mypython_path"){
   # create a new virtualenv
-  # reticulate::virtualenv_create(envname = envname, python=python)
+  reticulate::virtualenv_create(envname = envname, python=python)
 
   # install packages
   reticulate::virtualenv_install(envname = envname,packages = pac_c)

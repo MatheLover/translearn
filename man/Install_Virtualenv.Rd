@@ -4,7 +4,7 @@
 \alias{Install_Virtualenv}
 \title{Install Python packages via virtualenv}
 \usage{
-Install_Virtualenv(pac_c, envname = "my_env", python = NULL)
+Install_Virtualenv(pac_c, envname = "my_env", python = "mypython_path")
 }
 \arguments{
 \item{pac_c}{Character vector containing list of packages to be installed}
