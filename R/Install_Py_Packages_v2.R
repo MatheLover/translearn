@@ -13,7 +13,7 @@
 #' @examples Install_Py_Packages_v2("conda",envname="~/Documents/conda_test")
 Install_Py_Packages_v2 <- function(method="default",envname="my_env", python=NULL, envname_conda="my_conda_env"){
   # package vector
-  pac_c <- c("joblib","numpy","pandas","sklearn","pillow","keras","keras_applications","keras-vggface","tensorflow")
+  pac_c <- c("joblib","numpy","pandas","scikit-learn","pillow","keras","keras_applications","keras-vggface","tensorflow")
 
   if(method == "default"){
     Install_Default(pac_c)
