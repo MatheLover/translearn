@@ -5,7 +5,7 @@
 \title{Check whether the Python packages are installed. If not, installation will be carried out.}
 \usage{
 Install_Py_Packages_v2(
-  method = "default",
+  method = "virtualenv",
   envname = "my_env",
   python = NULL,
   envname_conda = "my_conda_env"
