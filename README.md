@@ -34,7 +34,7 @@ A R package using transfer learning to cluster images. This is, up to our knowle
 19. Save images into grid. `Save_Img("/Users/han/Codes/transfer_image_test",300,60,60)`.
 
 
-
+Bugs to Fix: 1. save .txt 2. save_img 3. update parameter k in K-Means clustering
 
 ## References
 [Related GitHub Repository](https://github.com/yilangpeng/image-clustering)
