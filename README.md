@@ -36,8 +36,6 @@ A R package using transfer learning to cluster images. This is, up to our knowle
 
 
 
-Note: 5 and 6 are already included in Test.R.
-
 ## References
 [Related GitHub Repository](https://github.com/yilangpeng/image-clustering)
 
