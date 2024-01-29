@@ -42,7 +42,7 @@ Combine_Feature_v2 <- function(cwd){
       fpath_char <- as.character(imgfile_catalog[i,"img_filepath"])
 
       # construct feature filename and folder and path
-      feature_fname <- paste(basename(fpath_char),".dat",sep="")
+      feature_fname <- paste(basename(fpath_char),".txt",sep="")
       feature_folder <- basename(dirname(fpath_char))
       feature_path <- file.path(cwd, "feature_extraction",model, feature_folder,feature_fname)
       if(!file.exists(feature_path)){
@@ -79,7 +79,7 @@ Combine_Feature_v2 <- function(cwd){
     }
 
     # construct combine feature filepath
-    cfname <- paste(cwd,"/feature_extraction/","combined_feature/",model,".dat",sep="")
+    cfname <- paste(cwd,"/feature_extraction/","combined_feature/",model,".txt",sep="")
 
     # save combined feature
     joblib$dump(py_feature_array,cfname)

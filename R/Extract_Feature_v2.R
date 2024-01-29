@@ -58,7 +58,7 @@ Extract_Feature_v2 <- function(model, base_model_name, cwd, img_dimension, sampl
 
     # construct folder and filepath for saving features
     folder_path <- file.path(cwd, "feature_extraction",base_model_name,basename(dirname(fpath_char)))
-    fsave_path <- paste(folder_path,"/",basename(fpath_char),".dat",sep="")
+    fsave_path <- paste(folder_path,"/",basename(fpath_char),".txt",sep="")
 
 
     # create new dir on the computer
