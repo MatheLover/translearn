@@ -41,7 +41,7 @@ PCA <- function(cwd){
     if(!dir.exists(folder_path)){
       dir.create(folder_path, recursive = TRUE)
     }
-    pca_savepath <- paste(folder_path,model,".dat",sep="")
+    pca_savepath <- paste(folder_path,model,".txt",sep="")
     joblib$dump(x_pca, pca_savepath)
 
     # save components
