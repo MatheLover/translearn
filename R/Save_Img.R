@@ -73,7 +73,7 @@ Save_Image <- function(cwd, jpg_list_df, k_val, model, w_sq,w_clusterid,h_imgid)
 
       # size tuple
       size_tuple <- reticulate::tuple(as.integer(w_sq),as.integer(w_sq))
-      img$thumbnail(size_tuple,pil$Image$ANTIALIAS)
+      img$thumbnail(size_tuple,pil$Image$LANCZOS)
 
       # calculate the position of img in the row; note python starts indexing from 0
       row_pos <- (m-1) %% ncol
