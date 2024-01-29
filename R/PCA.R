@@ -16,7 +16,7 @@ PCA <- function(cwd){
 
   for (model in cvmodels){
     # retrieve the filepath for .dat file for each model
-    dat_fp <- paste(cwd,"/feature_extraction/","combined_feature/",model,".dat",sep="")
+    dat_fp <- paste(cwd,"/feature_extraction/","combined_feature/",model,".txt",sep="")
 
     # check whether .dat file exists; If no, skip
     if(!file.exists(dat_fp)){

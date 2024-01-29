@@ -13,7 +13,7 @@ K_Means_Clustering_v2 <- function(cwd, num_cluster){
 
   for (model in cvmodels){
     # construct feature path (after pca)
-    fpca_path <- paste(cwd, "/feature_extraction/feature_PCA/",model,".dat",sep="")
+    fpca_path <- paste(cwd, "/feature_extraction/feature_PCA/",model,".txt",sep="")
     if(!file.exists(fpca_path)){
       next
     }
