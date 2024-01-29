@@ -24,12 +24,12 @@ A R package using transfer learning to cluster images. This is, up to our knowle
 11.Generates .txt file containing image file paths from their folder(s) by `Generate_txt('/Users/han/Codes/transfer_image_test/')`. Reminder: the img/ has to be inside the directory folder, and the folder name has to be "img").
 12. Load three models `model16 <- Load_VGG16()`, `modelface <- Load_VGGFace()`, and `model365 <- Load_Place365()`
 13. Select a sample of images for the project by `Subset_txt('/Users/han/Codes/transfer_image_test/',10)` where 10 indicates the sample size. 
-14. Extract image features using different models. `Extract_Feature_v2(model16,"VGG16_fc1","/Users/han/Codes/transfer_image_test/",c(224,224),sampled=TRUE)`,
-`Extract_Feature_v2(model365,"VGG16_places_fc1","/Users/han/Codes/transfer_image_test",c(224,224),sampled=TRUE)`,
-`Extract_Feature_v2(modelface,"VGGFace_fc6","/Users/han/Codes/transfer_image_test",c(224,224),sampled=TRUE)`,
+14. Extract image features using different models. `Extract_Feature_v2(model16,"VGG16_fc1","/Users/han/Codes/transfer_image_test/",img_dimension=c(224,224),sampled=TRUE)`,
+`Extract_Feature_v2(model365,"VGG16_places_fc1","/Users/han/Codes/transfer_image_test",img_dimension=c(224,224),sampled=TRUE)`,
+`Extract_Feature_v2(modelface,"VGGFace_fc6","/Users/han/Codes/transfer_image_test",img_dimension=c(224,224),sampled=TRUE)`,
 15. Combine Image features. `Combine_Feature_v2("/Users/han/Codes/transfer_image_test")`.
 16. Perform PCA to reduce dimensions. `PCA("/Users/han/Codes/transfer_image_test")`
-17. Use K-Means clustering to categorize images `K_Means_Clustering_v2("/Users/han/Codes/transfer_image_test", K=6)`
+17. Use K-Means clustering to categorize images `K_Means_Clustering_v2("/Users/han/Codes/transfer_image_test", num_cluster=6)`
 18. Duplicate images. `Duplicate_Image_Kmeans("/Users/han/Codes/transfer_image_test")`
 19. Save images into grid. `Save_Img("/Users/han/Codes/transfer_image_test",300,60,60)`.
 
