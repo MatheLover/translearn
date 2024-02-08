@@ -2,7 +2,7 @@
 % Please edit documentation in R/Extract_Feature_v2.R
 \name{Extract_Feature_v2}
 \alias{Extract_Feature_v2}
-\title{Extract image features and save them as .dat files}
+\title{Extract image features and save them as .txt files}
 \usage{
 Extract_Feature_v2(model, base_model_name, cwd, img_dimension, sampled)
 }
@@ -18,7 +18,7 @@ Extract_Feature_v2(model, base_model_name, cwd, img_dimension, sampled)
 \item{sampled}{If sampled is TRUE, use sampled images; else, use all images. Default is TRUE}
 }
 \description{
-Extract image features and save them as .dat files
+Extract image features and save them as .txt files
 }
 \examples{
 Extract_Feature_v2(model16, "VGG16_fc1", "/Users/benchiang/Documents/ComputationalSocialScience/R_Package_Material", c(224,224))

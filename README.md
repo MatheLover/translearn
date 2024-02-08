@@ -18,20 +18,20 @@ A R package using transfer learning to cluster images. This is, up to our knowle
    - `git submodule add https://github.com/MatheLover/Places365.git place_translearn_2`
    - `git submodule add https://github.com/MatheLover/VGGFace_tf2_keras_2.git VGG_Face_translearn_2`
 6. Load translearn and reticulate package using `library(translearn)` and `library(reticulate)`
-7. Specify your python path through `reticulate::use_python('/Users/benchiang88888888/.pyenv/versions/3.9.7/bin/python')`. Please change the path to your own version by typing `which python` on your terminal. Otherwise, just use `reticulate::install_python(version = "3.11.0")` to let reticulate install python for you. 
-8. Create a working directory and virtual environment and use it, e.g. `workingdir = /Users/han/Codes/transfer_image_test/`, then `reticulate::virtualenv_create(workingdir)`, and `reticulate::use_virtualenv(workingdir)`. Reminder: please don't use string folder names for the `reticulate::virtualenv_create('/Users/han/Codes/transfer_image_test/')`.
+7. Specify your python path through `reticulate::use_python('/Users/charlie/.pyenv/versions/3.9.7/bin/python')`. Please change the path to your own version by typing `which python` on your terminal. Otherwise, just select python version (>=3.8) and use `reticulate::install_python(version = "version_number")` to let reticulate install python for you. 
+8. Create a working directory and virtual environment and use it, e.g. `workingdir = '/Users/david/Codes/transfer_image_test/'`, then `reticulate::virtualenv_create(workingdir)`, and `reticulate::use_virtualenv(workingdir)`.
 9. Install necessary python packages using `Install_Py_Packages_v2(envname=workingdir)`
-11.Generates .txt file containing image file paths from their folder(s) by `Generate_txt('/Users/han/Codes/transfer_image_test/')`. Reminder: the img/ has to be inside the directory folder, and the folder name has to be "img").
+11.Generates .txt file containing image file paths from their folder(s) by `Generate_txt(workingdir)`. Reminder: the img/ has to be inside the directory folder, and the folder name has to be "img").
 12. Load three models `model16 <- Load_VGG16()`, `modelface <- Load_VGGFace()`, and `model365 <- Load_Place365()`
-13. Select a sample of images for the project by `Subset_txt('/Users/han/Codes/transfer_image_test/',10)` where 10 indicates the sample size. 
-14. Extract image features using different models. `Extract_Feature_v2(model16,"VGG16_fc1","/Users/han/Codes/transfer_image_test/",img_dimension=c(224,224),sampled=TRUE)`,
-`Extract_Feature_v2(model365,"VGG16_places_fc1","/Users/han/Codes/transfer_image_test",img_dimension=c(224,224),sampled=TRUE)`,
-`Extract_Feature_v2(modelface,"VGGFace_fc6","/Users/han/Codes/transfer_image_test",img_dimension=c(224,224),sampled=TRUE)`,
-15. Combine Image features. `Combine_Feature_v2("/Users/han/Codes/transfer_image_test")`.
-16. Perform PCA to reduce dimensions. `PCA("/Users/han/Codes/transfer_image_test")`
-17. Use K-Means clustering to categorize images `K_Means_Clustering_v2("/Users/han/Codes/transfer_image_test", num_cluster=6)`
-18. Duplicate images. `Duplicate_Image_Kmeans("/Users/han/Codes/transfer_image_test")`
-19. Save images into grid. `Save_Img("/Users/han/Codes/transfer_image_test",300,60,60)`.
+13. Select a sample of images for the project by `Subset_txt(workingdir,10)` where 10 indicates the sample size. 
+14. Extract image features using different models. `Extract_Feature_v2(model16,"VGG16_fc1",workingdir,img_dimension=c(224,224),sampled=TRUE)`,
+`Extract_Feature_v2(model365,"VGG16_places_fc1",workingdir,img_dimension=c(224,224),sampled=TRUE)`,
+`Extract_Feature_v2(modelface,"VGGFace_fc6",workingdir,img_dimension=c(224,224),sampled=TRUE)`,
+15. Combine Image features. `Combine_Feature_v2(workingdir)`.
+16. Perform PCA to reduce dimensions. `PCA(workingdir)`.
+17. Use K-Means clustering to categorize images `K_Means_Clustering_v2(workingdir, num_cluster=6)`.
+18. Duplicate images. `Duplicate_Image_Kmeans(workingdir)`.
+19. Save images into grid. `Save_Img(workingdir,w_sq=300,w_clusterid=60,h_imgid=60)`, where w_sq indicates width/height of an image, w_clusterid indicates width of text for cluster id, and h_imgid indicates height of gap. 
 
 
 Bugs to Fix: 1. save .txt 2. save_img 3. update parameter k in K-Means clustering

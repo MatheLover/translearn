@@ -15,10 +15,10 @@ PCA <- function(cwd){
   cvmodels <- list("VGG16_fc1","VGG16_places_fc1","VGGFace_fc6")
 
   for (model in cvmodels){
-    # retrieve the filepath for .dat file for each model
+    # retrieve the filepath for .txt file for each model
     dat_fp <- paste(cwd,"/feature_extraction/","combined_feature/",model,".txt",sep="")
 
-    # check whether .dat file exists; If no, skip
+    # check whether .txt file exists; If no, skip
     if(!file.exists(dat_fp)){
       next
     }

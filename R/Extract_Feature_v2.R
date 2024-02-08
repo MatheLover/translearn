@@ -1,4 +1,4 @@
-#' Extract image features and save them as .dat files
+#' Extract image features and save them as .txt files
 #'
 #' @param model character Loaded learning model
 #' @param base_model_name Name of base model
